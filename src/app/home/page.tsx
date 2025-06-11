@@ -1,10 +1,14 @@
+import HeroSection from "@/components/Hero";
+import SpecialityMenu from "@/components/SpecialityMenu";
+import { Grid } from "@mui/material";
 import React from "react";
 
 const HomePage = () => {
   return (
-    <div>
-      <h2>Welcome to the Doctor Appointment App</h2>
-    </div>
+    <Grid>
+      <HeroSection />
+      <SpecialityMenu />
+    </Grid>
   );
 };
 

@@ -10,7 +10,7 @@ import Profile from "./Profile";
 
 const Header = () => {
   const pathname = usePathname();
-//   const [showMenu, setShowMenu] = useState<boolean>(false);
+  //   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [token, setToken] = useState<boolean>(true);
   return (
     <>
@@ -19,9 +19,14 @@ const Header = () => {
         alignItems="center"
         justifyContent="space-between"
         padding={2}
+        sx={{
+          position: "sticky",
+          top: 0,
+          backgroundColor: "#fff",
+        }}
       >
         <Grid>
-          <Image src={assets.logo} alt="Logo" width={200} height={200} />
+          <Image src={assets.logo} alt="Logo" width={150} height={150} />
         </Grid>
         <Grid container gap={3} alignItems="center" justifyContent="center">
           {headerLinks.map((link) => {
@@ -29,7 +34,7 @@ const Header = () => {
             return (
               <Link key={link.title} href={link.path}>
                 <Typography
-                  fontSize={20}
+                  fontSize={16}
                   fontWeight={600}
                   color={isActive ? "#5F6FFF" : "inherit"}
                   sx={{

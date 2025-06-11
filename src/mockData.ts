@@ -1,5 +1,5 @@
 export const headerLinks = [
-  { title: "HOME", path: "/" },
+  { title: "HOME", path: "/home" },
   { title: "ALL DOCTORS", path: "/alldoctors" },
   { title: "ABOUT", path: "/about" },
   { title: "CONTACT", path: "/contact" },

@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Container maxWidth="xl" sx={{ padding: 0 }}>
+        <Container maxWidth="lg" sx={{ padding: 0 }}>
           <Header />
           {children}
         </Container>
