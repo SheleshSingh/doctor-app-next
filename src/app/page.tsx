@@ -1,12 +1,15 @@
+import HeroSection from "@/components/Hero";
+import SpecialityMenu from "@/components/SpecialityMenu";
+import { Grid } from "@mui/material";
 import React from "react";
-// import HomePage from "./home/page";
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <div>
-      {/* <HomePage /> */}
-    </div>
+    <Grid>
+      <HeroSection />
+      <SpecialityMenu />
+    </Grid>
   );
 };
 
-export default Home;
+export default HomePage;
