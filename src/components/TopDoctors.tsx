@@ -44,6 +44,10 @@ const TopDoctors = () => {
               backgroundColor: "#EAEFFF",
               color: "#4B5563",
               borderRadius: 5,
+              transition: "all 0.3s ease-in-out",
+              "&:hover": {
+                transform: "scale(1.05)",
+              },
             }}
             onClick={() => scrollTo(0, 0)}
           >
