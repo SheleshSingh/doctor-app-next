@@ -1,3 +1,4 @@
+"use client";
 import { specialityData } from "@/assets/assets";
 import { Grid, Typography } from "@mui/material";
 import Image from "next/image";
@@ -24,7 +25,11 @@ const SpecialityMenu = () => {
         </Typography>
         <Grid container mt={5} gap={3} justifyContent="center">
           {specialityData.map((item, index) => (
-            <Link href={`/doctors/${item.speciality}`} key={index}>
+            <Link
+              onClick={() => scrollTo(0, 0)}
+              href={`/doctors/${item.speciality}`}
+              key={index}
+            >
               <Grid
                 sx={{
                   "&:hover": {
