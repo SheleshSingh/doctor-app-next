@@ -1,3 +1,4 @@
+import Banner from "@/components/banner";
 import HeroSection from "@/components/Hero";
 import SpecialityMenu from "@/components/SpecialityMenu";
 import TopDoctors from "@/components/TopDoctors";
@@ -9,6 +10,7 @@ const HomePage = () => {
       <HeroSection />
       <SpecialityMenu />
       <TopDoctors />
+      <Banner />
     </>
   );
 };

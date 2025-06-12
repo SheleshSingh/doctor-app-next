@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Container } from "@mui/material";
-// import Footer from "@/components/Footer";
+import AppContextProvider from "@/context/AppContext";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,15 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Container maxWidth="lg" sx={{ padding: 0 }}>
+        <Container maxWidth="lg" sx={{ padding: 0, marginBottom: 5 }}>
           <Header />
-          {children}
+          <AppContextProvider>{children}</AppContextProvider>
+          <Footer />
         </Container>
-        {/* <Footer /> */}
       </body>
     </html>
   );

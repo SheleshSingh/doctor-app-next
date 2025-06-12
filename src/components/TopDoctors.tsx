@@ -1,9 +1,16 @@
+"use client";
 import { Button, Grid, Typography } from "@mui/material";
 import DoctorCards from "./DoctorCards";
-import { doctors } from "@/assets/assets";
 import Link from "next/link";
+import { useContext } from "react";
+import { AppContext } from "@/context/AppContext";
 
 const TopDoctors = () => {
+  const context = useContext(AppContext);
+  if (!context || !context.doctors) {
+    return null;
+  }
+  const { doctors } = context;
   return (
     <Grid>
       <Typography fontSize={30} fontWeight={600} mt={5} textAlign="center">
@@ -28,18 +35,21 @@ const TopDoctors = () => {
           </Grid>
         ))}
       </Grid>
-      <Grid container justifyContent="center" mt={3}>
-        <Button
-          sx={{
-            width: "150px",
-            height: "40px",
-            backgroundColor: "#EAEFFF",
-            color: "#4B5563",
-            borderRadius: 5,
-          }}
-        >
-          More
-        </Button>
+      <Grid container justifyContent="center" mt={5}>
+        <Link href="/doctors">
+          <Button
+            sx={{
+              width: "150px",
+              height: "40px",
+              backgroundColor: "#EAEFFF",
+              color: "#4B5563",
+              borderRadius: 5,
+            }}
+            onClick={() => scrollTo(0, 0)}
+          >
+            More
+          </Button>
+        </Link>
       </Grid>
     </Grid>
   );

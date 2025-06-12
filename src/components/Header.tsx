@@ -23,15 +23,18 @@ const Header = () => {
           position: "sticky",
           top: 0,
           backgroundColor: "#fff",
+          zIndex: 1000,
         }}
       >
         <Grid>
-          <Image
-            src={assets.logo}
-            alt="Logo"
-            width={150}
-            style={{ height: "auto" }}
-          />
+          <Link href="/">
+            <Image
+              src={assets.logo}
+              alt="Logo"
+              width={150}
+              style={{ height: "auto" }}
+            />
+          </Link>
         </Grid>
         <Grid container gap={3} alignItems="center" justifyContent="center">
           {headerLinks.map((link) => {

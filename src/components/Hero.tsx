@@ -78,7 +78,7 @@ const HeroSection = () => {
         <Image
           src={assets.header_img}
           alt="header_img"
-          width={550}
+          width={600}
           style={{ height: "auto" }}
         />
       </Grid>
