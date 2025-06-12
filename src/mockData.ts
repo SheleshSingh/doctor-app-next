@@ -11,3 +11,12 @@ export const footerLinks = [
   { title: "Contact us", path: "/contact" },
   { title: "Privacy Policy", path: "/privacy-policy" },
 ];
+
+export const doctorLists = [
+  "General physician",
+  "Gynecologist",
+  "Dermatologist",
+  "Pediatricians",
+  "Neurologist",
+  "Gastroenterologist",
+];

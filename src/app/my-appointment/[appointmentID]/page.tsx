@@ -1,19 +1,3 @@
-// "use server";
-// const AppointmentDetails = async ({
-//   params: { appointmentID },
-// }: {
-//   params: { appointmentID: string };
-// }) => {
-//   console.log("Appointment ID:", await appointmentID);
-//   return (
-//     <div>
-//       <h1>Appointment Details for {appointmentID}</h1>
-//     </div>
-//   );
-// };
-
-// export default AppointmentDetails;
-
 const AppointmentDetails = async ({
   params,
 }: {
