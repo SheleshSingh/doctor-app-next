@@ -13,7 +13,6 @@ const HeroSection = () => {
       bgcolor="#5F6FFF"
       borderRadius={2}
       mt={2}
-      minHeight={500}
     >
       <Grid
         size={{ xs: 12, md: 6 }}
@@ -22,25 +21,19 @@ const HeroSection = () => {
         justifyContent="center"
         direction="column"
       >
-        <Typography fontSize={50} fontWeight={600} color="#fff">
+        <Typography fontSize={40} fontWeight={600} color="#fff">
           Book Appointment <br />
           With Trusted Doctors
         </Typography>
         <Grid>
-          <Grid
-            container
-            alignItems="center"
-            justifyContent="center"
-            gap={2}
-            mt={2}
-          >
+          <Grid container alignItems="center" justifyContent="center" gap={2}>
             <Image
               src={assets.group_profiles}
               alt="doctor_img"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <Typography color="#fff" fontSize={14} fontWeight={500}>
+            <Typography color="#fff" fontSize={12} fontWeight={500}>
               Simply browse through our extensive list of trusted doctors,
               <br />
               schedule your appointment hassle-free.
@@ -61,11 +54,11 @@ const HeroSection = () => {
                   backgroundColor: "#ffffff",
                   color: "#595959",
                   borderRadius: 5,
-                  padding: "10px 20px",
+                  padding: "8px 15px",
                   marginTop: 2,
+                  transition: "all 0.3s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.05)",
-                    transition: "all 0.3s ease",
                   },
                 }}
               >
@@ -78,8 +71,9 @@ const HeroSection = () => {
       <Grid
         size={{ xs: 12, md: 6 }}
         container
-        alignItems="end"
+        alignItems="flex-end"
         justifyContent="center"
+        paddingX={4}
       >
         <Image
           src={assets.header_img}
