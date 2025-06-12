@@ -31,7 +31,7 @@ const HeroSection = () => {
               src={assets.group_profiles}
               alt="doctor_img"
               width={80}
-              height={80}
+              style={{ height: "auto" }}
             />
             <Typography color="#fff" fontSize={12} fontWeight={500}>
               Simply browse through our extensive list of trusted doctors,
@@ -47,7 +47,7 @@ const HeroSection = () => {
                     src={assets.arrow_icon}
                     alt="arrow_icon"
                     width={10}
-                    height={10}
+                    style={{ height: "auto" }}
                   />
                 }
                 sx={{
@@ -79,7 +79,7 @@ const HeroSection = () => {
           src={assets.header_img}
           alt="header_img"
           width={550}
-          height={500}
+          style={{ height: "auto" }}
         />
       </Grid>
     </Grid>

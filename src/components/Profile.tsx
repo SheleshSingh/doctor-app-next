@@ -32,14 +32,15 @@ const Profile = ({ setToken }: { setToken: (token: boolean) => void }) => {
         src={assets.profile_pic}
         alt="Profile Picture"
         width={50}
-        height={50}
-        style={{ borderRadius: "50%" }}
+        // height={50}
+        style={{ borderRadius: "50%", height: "auto" }}
       />
       <Image
         src={assets.dropdown_icon}
         alt="Dropdown Icon"
         width={10}
-        height={10}
+        // height={10}
+        style={{ height: "auto" }}
       />
       <Menu
         anchorEl={anchorEl}

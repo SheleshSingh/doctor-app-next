@@ -43,7 +43,7 @@ const SpecialityMenu = () => {
                   src={item.image}
                   alt={item.image}
                   width={100}
-                  height={100}
+                  style={{ height: "auto" }}
                 />
                 <Typography textAlign="center" fontSize={12}>
                   {item.speciality}

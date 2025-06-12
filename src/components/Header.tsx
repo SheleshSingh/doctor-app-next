@@ -26,7 +26,12 @@ const Header = () => {
         }}
       >
         <Grid>
-          <Image src={assets.logo} alt="Logo" width={150} height={150} />
+          <Image
+            src={assets.logo}
+            alt="Logo"
+            width={150}
+            style={{ height: "auto" }}
+          />
         </Grid>
         <Grid container gap={3} alignItems="center" justifyContent="center">
           {headerLinks.map((link) => {
