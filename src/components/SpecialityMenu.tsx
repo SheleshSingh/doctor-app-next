@@ -27,9 +27,9 @@ const SpecialityMenu = () => {
             <Link href={`/doctors/${item.speciality}`} key={index}>
               <Grid
                 sx={{
+                  transition: "all 0.2s ease-in-out",
                   "&:hover": {
-                    transform: "translateY(-10px)",
-                    transition: "all 0.1s ease-in-out",
+                    transform: "translateY(-15px)",
                     cursor: "pointer",
                   },
                 }}
