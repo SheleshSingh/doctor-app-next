@@ -23,7 +23,7 @@ const DoctorCards = ({ doctor }: { doctor: DoctorProps }) => {
         height={200}
         style={{ backgroundColor: "#C9D8FF", width: "100%" }}
       />
-      <Grid container spacing={1} padding={1.5}>
+      <Grid container padding={1} direction="column">
         <Grid container alignItems="center" gap={1} mt={1}>
           <Grid
             width={8}
