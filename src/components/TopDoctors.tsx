@@ -29,7 +29,7 @@ const TopDoctors = () => {
       <Grid mt={5} container justifyContent="center" spacing={2}>
         {doctors.slice(0, 10).map((doctor, index) => (
           <Grid size={{ xs: 12, md: 2.3 }} key={index}>
-            <Link href={`/my-appointment/${doctor._id}`} key={index}>
+            <Link href={`/my-appointment/${doctor.speciality}`} key={index}>
               <DoctorCards doctor={doctor} />
             </Link>
           </Grid>
@@ -44,6 +44,10 @@ const TopDoctors = () => {
               backgroundColor: "#EAEFFF",
               color: "#4B5563",
               borderRadius: 5,
+              transition: "all 0.3s ease-in-out",
+              "&:hover": {
+                transform: "scale(1.05)",
+              },
             }}
             onClick={() => scrollTo(0, 0)}
           >
