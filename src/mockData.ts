@@ -20,3 +20,5 @@ export const doctorLists = [
   "Neurologist",
   "Gastroenterologist",
 ];
+
+export const weekOfDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
