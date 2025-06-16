@@ -1,9 +1,10 @@
 "use client";
 import { assets } from "@/assets/assets";
+import RelatedDoctors from "@/components/RaletedDoctors";
 import { AppContext } from "@/context/AppContext";
+import { daysOfWeek } from "@/mockData";
 import { DoctorProps } from "@/types";
-import { Grid, Typography } from "@mui/material";
-import { get } from "http";
+import { Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { use, useContext, useEffect, useState } from "react";
 
@@ -15,9 +16,9 @@ const AppointmentDetails = ({
   const { docID } = use(params);
   const context = useContext(AppContext);
   const [infoDoc, setInfoDoc] = useState<DoctorProps | null>(null);
-  const [docSlot, setDocSlot] = useState<{ datetime: Date; time: string }[][]>(
-    []
-  );
+  const [docSlots, setDocSlots] = useState<
+    { datetime: Date; time: string }[][]
+  >([]);
   const [slotIndex, setSlotIndex] = useState<number>(0);
   const [timeSlot, setTimeSlot] = useState<string>("");
   const doctors = context?.doctors || [];
@@ -28,7 +29,7 @@ const AppointmentDetails = ({
   };
 
   const getAvailableSlots = async () => {
-    setDocSlot([]);
+    setDocSlots([]);
     const today = new Date();
     for (let i = 0; i < 7; i++) {
       const currentDate = new Date(today);
@@ -59,7 +60,7 @@ const AppointmentDetails = ({
           currentDate.setMinutes(currentDate.getMinutes() + 30);
         }
       }
-      setDocSlot((prevSlots) => [...prevSlots, timeSlots]);
+      setDocSlots((prevSlots) => [...prevSlots, timeSlots]);
     }
   };
 
@@ -71,9 +72,7 @@ const AppointmentDetails = ({
   useEffect(() => {
     getAvailableSlots();
   }, [infoDoc]);
-  useEffect(() => {
-    console.log("Doc Slot", docSlot);
-  }, [docSlot]);
+  useEffect(() => {}, [docSlots]);
 
   return (
     <Grid size={{ xs: 12, md: 12 }}>
@@ -141,17 +140,75 @@ const AppointmentDetails = ({
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, md: 12 }} container justifyContent="right" mt={2}>
-          <Grid
-            size={{ xs: 12, md: 10 }}
-            border={"1px solid #4B5563"}
-            padding={2}
-          >
+          <Grid size={{ xs: 12, md: 10 }} padding={2}>
             <Typography fontSize={18} fontWeight={500} color="#565656">
               Booking slots
             </Typography>
+            <Grid container spacing={1} mt={2}>
+              {docSlots.length > 0 &&
+                docSlots.map((item, index) => (
+                  <Grid
+                    key={index}
+                    container
+                    spacing={1}
+                    justifyContent="center"
+                    alignItems="center"
+                    border={"1px solid #DDDDDD"}
+                    width={60}
+                    padding={1}
+                    borderRadius={5}
+                    color={slotIndex === index ? "#FFFFFF" : "#4B5563"}
+                    bgcolor={slotIndex === index ? "#5F6FFF" : "#FFFFFF"}
+                    sx={{
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setSlotIndex(index)}
+                  >
+                    <Typography>
+                      {item[0] && daysOfWeek[item[0].datetime.getDay()]}
+                    </Typography>
+                    <Typography>
+                      {item[0] && item[0].datetime.getDate()}
+                    </Typography>
+                  </Grid>
+                ))}
+            </Grid>
+            <Grid container spacing={1} mt={2}>
+              {docSlots.length &&
+                docSlots[slotIndex].map((item, index) => (
+                  <Grid
+                    key={index}
+                    border={"1px solid #DDDDDD"}
+                    borderRadius={5}
+                    width={100}
+                    marginRight={1}
+                    textAlign={"center"}
+                    onClick={() => setTimeSlot(item.time)}
+                    bgcolor={timeSlot === item.time ? "#5F6FFF" : "#FFFFFF"}
+                    color={timeSlot === item.time ? "#FFFFFF" : "#4B5563"}
+                    sx={{
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Typography>{item.time.toLowerCase()}</Typography>
+                  </Grid>
+                ))}
+            </Grid>
+            <Button
+              sx={{
+                backgroundColor: "#5F6FFF",
+                color: "#FFFFFF",
+                marginTop: 5,
+                padding: "10px 20px",
+                borderRadius: 5,
+              }}
+            >
+              Book an appointment
+            </Button>
           </Grid>
         </Grid>
       </Grid>
+      <RelatedDoctors docID={docID} speciality={infoDoc?.speciality ?? ""} />
     </Grid>
   );
 };
