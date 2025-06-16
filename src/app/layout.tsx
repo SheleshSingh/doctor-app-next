@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Container maxWidth="lg" sx={{ padding: 0, marginBottom: 5 }}>
+        <Container maxWidth="lg" sx={{ padding: 2, marginBottom: 5 }}>
           <Header />
           <AppContextProvider>{children}</AppContextProvider>
           <Footer />

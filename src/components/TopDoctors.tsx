@@ -29,7 +29,7 @@ const TopDoctors = () => {
       <Grid mt={5} container justifyContent="center" spacing={2}>
         {doctors.slice(0, 10).map((doctor, index) => (
           <Grid size={{ xs: 12, md: 2.3 }} key={index}>
-            <Link href={`/my-appointment/${doctor.speciality}`} key={index}>
+            <Link href={`/my-appointment/${doctor._id}`} key={index}>
               <DoctorCards doctor={doctor} />
             </Link>
           </Grid>
