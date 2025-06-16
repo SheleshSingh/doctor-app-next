@@ -22,3 +22,20 @@ export const doctorLists = [
 ];
 
 export const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+export const aboutCardData = [
+  {
+    title: "Trusted Efficiency:",
+    description:
+      "Streamlined appointment scheduling that fits into your busy lifestyle.",
+  },
+  {
+    title: "Convenience:",
+    description:
+      "Access to a network of trusted healthcare professionals in your area.",
+  },
+  {
+    title: "Personalization:",
+    description:
+      "Tailored recommendations and reminders to help you stay on top of your health.",
+  },
+];

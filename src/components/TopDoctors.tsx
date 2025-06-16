@@ -4,8 +4,10 @@ import DoctorCards from "./DoctorCards";
 import Link from "next/link";
 import { useContext } from "react";
 import { AppContext } from "@/context/AppContext";
+import useResponsive from "@/hooks/useResponsive";
 
 const TopDoctors = () => {
+  const { isMobile, isTablet, isDesktop } = useResponsive();
   const context = useContext(AppContext);
   if (!context || !context.doctors) {
     return null;
@@ -13,11 +15,16 @@ const TopDoctors = () => {
   const { doctors } = context;
   return (
     <Grid>
-      <Typography fontSize={30} fontWeight={600} mt={5} textAlign="center">
+      <Typography
+        fontSize={isMobile ? 24 : isTablet ? 28 : isDesktop ? 30 : 32}
+        fontWeight={600}
+        mt={5}
+        textAlign="center"
+      >
         Top Doctors to Book
       </Typography>
       <Typography
-        fontSize={16}
+        fontSize={isMobile ? 12 : isTablet ? 14 : isDesktop ? 16 : 18}
         fontWeight={500}
         mt={1}
         textAlign="center"
