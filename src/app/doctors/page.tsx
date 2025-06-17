@@ -13,9 +13,14 @@ const AllDoctors = () => {
   const { doctors } = context;
   return (
     <Grid size={{ xs: 12, md: 9 }} mt={5}>
-      <Grid container spacing={2} mt={1}>
+      <Grid container spacing={2} mt={2}>
         {doctors.map((item, index) => (
-          <Grid size={{ xs: 12, md: 3 }} container direction="row" key={index}>
+          <Grid
+            size={{ xs: 12, md: 3 }}
+            container
+            justifyContent="center"
+            key={index}
+          >
             <Link href={`/my-appointment/${item._id}`}>
               <DoctorCards doctor={item} />
             </Link>

@@ -1,4 +1,5 @@
 import { assets } from "@/assets/assets";
+import { menuItem } from "@/mockData";
 import { Grid, Menu, MenuItem } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,11 +14,7 @@ const Profile = ({ setToken }: { setToken: (token: boolean) => void }) => {
   const handleMouseLeave = () => {
     setAnchorEl(null);
   };
-  const menuItem = [
-    { title: "My Profile", path: "/my-profile" },
-    { title: "My Appointments", path: "/my-appointment" },
-    { title: "Logout", path: "/" },
-  ];
+ 
   return (
     <Grid
       container
@@ -32,14 +29,12 @@ const Profile = ({ setToken }: { setToken: (token: boolean) => void }) => {
         src={assets.profile_pic}
         alt="Profile Picture"
         width={50}
-        // height={50}
         style={{ borderRadius: "50%", height: "auto" }}
       />
       <Image
         src={assets.dropdown_icon}
         alt="Dropdown Icon"
         width={10}
-        // height={10}
         style={{ height: "auto" }}
       />
       <Menu

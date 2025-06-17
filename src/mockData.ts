@@ -4,6 +4,11 @@ export const headerLinks = [
   { title: "ABOUT", path: "/about" },
   { title: "CONTACT", path: "/contact" },
 ];
+export const menuItem = [
+  { title: "My Profile", path: "/my-profile" },
+  { title: "My Appointments", path: "/my-appointment" },
+  { title: "Logout", path: "/login" },
+];
 
 export const footerLinks = [
   { title: "Home", path: "/" },
