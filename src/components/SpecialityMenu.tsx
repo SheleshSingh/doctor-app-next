@@ -1,12 +1,10 @@
 "use client";
 import { specialityData } from "@/assets/assets";
-import useResponsive from "@/hooks/useResponsive";
 import { Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
 const SpecialityMenu = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
   return (
     <Grid
       container
@@ -16,13 +14,13 @@ const SpecialityMenu = () => {
       id="speciality"
     >
       <Typography
-        fontSize={isMobile ? 24 : isTablet ? 28 : isDesktop ? 30 : 32}
+        fontSize={{ xs: 24, sm: 28, md: 30, lg: 32 }}
         fontWeight={600}
       >
         Find by Speciality
       </Typography>
       <Typography
-        fontSize={isMobile ? 12 : isTablet ? 14 : isDesktop ? 16 : 18}
+        fontSize={{ xs: 12, sm: 14, md: 16, lg: 18 }}
         fontWeight={500}
         mt={1}
         textAlign="center"

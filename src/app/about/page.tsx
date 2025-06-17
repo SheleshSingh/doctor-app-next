@@ -1,27 +1,25 @@
 "use client";
 import { assets } from "@/assets/assets";
-import useResponsive from "@/hooks/useResponsive";
 import { aboutCardData } from "@/mockData";
 import { Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 const AboutPage = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
   return (
     <Grid>
       <Typography
         color="#4B5563"
-        fontSize={isMobile ? 24 : isTablet ? 30 : isDesktop ? 34 : 36}
+        fontSize={{ xs: 24, sm: 30, md: 34, lg: 36 }}
         textAlign="center"
-        mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6}
+        mt={{ xs: 2, sm: 3, md: 5, lg: 6 }}
       >
         ABOUT <span style={{ color: "#000" }}>US</span>
       </Typography>
       <Grid
         size={{ xs: 12, md: 12 }}
         container
-        mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6}
+        mt={{ xs: 2, sm: 3, md: 5, lg: 6 }}
         spacing={3}
       >
         <Grid size={{ xs: 12, md: 4 }}>
@@ -34,7 +32,7 @@ const AboutPage = () => {
         <Grid
           size={{ xs: 12, md: 8 }}
           container
-          spacing={isMobile ? 1.5 : isTablet ? 3 : isDesktop ? 4 : 5}
+          spacing={{ xs: 1.5, sm: 3, md: 4, lg: 5 }}
           direction="column"
           padding={2}
           color="#4B5563"
@@ -65,9 +63,9 @@ const AboutPage = () => {
       <Grid>
         <Typography
           color="#4B5563"
-          fontSize={isMobile ? 20 : isTablet ? 24 : isDesktop ? 30 : 30}
-          mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6}
-          textAlign={isMobile ? "center" : "left"}
+          fontSize={{ xs: 20, sm: 24, md: 30, lg: 30 }}
+          mt={{ xs: 2, sm: 3, md: 5, lg: 6 }}
+          textAlign={{ xs: "center", sm: "left" }}
         >
           WHY <span style={{ color: "#171717" }}>CHOOSE US</span>
         </Typography>
@@ -78,7 +76,7 @@ const AboutPage = () => {
                 size={{ xs: 12, md: 4 }}
                 border={`1px solid #E5E7EB`}
                 key={index}
-                padding={isMobile ? 5 : isTablet ? 6 : isDesktop ? 7 : 9}
+                padding={{ xs: 5, sm: 6, md: 7, lg: 9 }}
                 sx={{
                   transition: "all 0.3s ease-in-out",
                   "&:hover": {
@@ -89,8 +87,8 @@ const AboutPage = () => {
               >
                 <Typography fontWeight={600}>{item.title}</Typography>
                 <Typography
-                  fontSize={isMobile ? 8 : isTablet ? 10 : isDesktop ? 12 : 14}
-                  mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6}
+                  fontSize={{ xs: 8, sm: 10, md: 12, lg: 14 }}
+                  mt={{ xs: 2, sm: 3, md: 5, lg: 6 }}
                 >
                   {item.description}
                 </Typography>

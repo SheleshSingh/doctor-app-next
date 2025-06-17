@@ -1,18 +1,16 @@
 "use client";
 import { assets } from "@/assets/assets";
-import useResponsive from "@/hooks/useResponsive";
 import { Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 const ContactPage = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
   return (
     <Grid>
       <Typography
         textAlign="center"
-        mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6}
-        fontSize={isMobile ? 20 : isTablet ? 24 : isDesktop ? 30 : 34}
+        mt={{ xs: 2, sm: 3, md: 5, lg: 6 }}
+        fontSize={{ xs: 20, sm: 24, md: 30, lg: 34 }}
         color="#4B5563"
       >
         CONTACT <span style={{ color: "#000" }}>US</span>
@@ -21,8 +19,8 @@ const ContactPage = () => {
         size={{ xs: 12, md: 12 }}
         container
         justifyContent="center"
-        mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6}
-        spacing={isMobile ? 1.5 : isTablet ? 3 : isDesktop ? 4 : 5}
+        mt={{ xs: 2, sm: 3, md: 5, lg: 6 }}
+        spacing={{ xs: 1.5, sm: 3, md: 4, lg: 5 }}
       >
         <Grid size={{ xs: 12, md: 5 }}>
           <Image
@@ -33,10 +31,10 @@ const ContactPage = () => {
         </Grid>
         <Grid size={{ xs: 12, md: 5 }} padding={2}>
           <Typography
-            fontSize={isMobile ? 16 : isTablet ? 18 : isDesktop ? 20 : 22}
+            fontSize={{ xs: 16, sm: 18, md: 20, lg: 22 }}
             fontWeight={600}
             color="#4B5563"
-            mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6}
+            mt={{ xs: 2, sm: 3, md: 5, lg: 6 }}
           >
             OUR OFFICE
           </Typography>
@@ -51,8 +49,8 @@ const ContactPage = () => {
           </Typography>
           <Typography
             color="#4B5563"
-            mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6}
-            fontSize={isMobile ? 16 : isTablet ? 18 : isDesktop ? 20 : 22}
+            mt={{ xs: 2, sm: 3, md: 5, lg: 6 }}
+            fontSize={{ xs: 16, sm: 18, md: 20, lg: 22 }}
             fontWeight={600}
           >
             CAREERS AT PRESCRIPTO
@@ -65,7 +63,7 @@ const ContactPage = () => {
               backgroundColor: "#FFFFFF",
               color: "#4B5563",
               padding: "10px 15px",
-              marginTop: isMobile ? 2 : isTablet ? 3 : isDesktop ? 5 : 6,
+              marginTop: { xs: 2, sm: 3, md: 5, lg: 6 },
               border: "1px solid #4B5563",
               borderRadius: 0,
               transition: "all 0.3s ease-in-out",

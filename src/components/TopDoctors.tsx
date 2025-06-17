@@ -4,10 +4,8 @@ import DoctorCards from "./DoctorCards";
 import Link from "next/link";
 import { useContext } from "react";
 import { AppContext } from "@/context/AppContext";
-import useResponsive from "@/hooks/useResponsive";
 
 const TopDoctors = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
   const context = useContext(AppContext);
   if (!context || !context.doctors) {
     return null;
@@ -16,7 +14,7 @@ const TopDoctors = () => {
   return (
     <Grid>
       <Typography
-        fontSize={isMobile ? 24 : isTablet ? 28 : isDesktop ? 30 : 32}
+        fontSize={{ xs: 24, sm: 28, md: 30, lg: 32 }}
         fontWeight={600}
         mt={5}
         textAlign="center"
@@ -24,7 +22,7 @@ const TopDoctors = () => {
         Top Doctors to Book
       </Typography>
       <Typography
-        fontSize={isMobile ? 12 : isTablet ? 14 : isDesktop ? 16 : 18}
+        fontSize={{ xs: 12, sm: 14, md: 16, lg: 18 }}
         fontWeight={500}
         mt={1}
         textAlign="center"
@@ -56,7 +54,6 @@ const TopDoctors = () => {
                 transform: "scale(1.05)",
               },
             }}
-            onClick={() => scrollTo(0, 0)}
           >
             More
           </Button>

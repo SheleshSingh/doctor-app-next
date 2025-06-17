@@ -1,12 +1,10 @@
 "use client";
 import { assets } from "@/assets/assets";
-import useResponsive from "@/hooks/useResponsive";
 import { Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
 const HeroSection = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
   return (
     <Grid
       size={{ xs: 12, md: 12 }}
@@ -24,9 +22,9 @@ const HeroSection = () => {
         direction="column"
       >
         <Typography
-          fontSize={isMobile ? 24 : isTablet ? 32 : isDesktop ? 40 : 48}
+          fontSize={{ xs: 20, sm: 24, md: 32, lg: 40, xl: 48 }}
           fontWeight={600}
-          mt={isMobile ? 2 : isTablet ? 3 : isDesktop ? 4 : 5}
+          mt={{ xs: 2, sm: 3, md: 4, lg: 5 }}
           color="#fff"
         >
           Book Appointment <br />
@@ -42,7 +40,7 @@ const HeroSection = () => {
             />
             <Typography
               color="#fff"
-              fontSize={isMobile ? 8 : isTablet ? 10 : isDesktop ? 12 : 14}
+              fontSize={{ xs: 8, sm: 10, md: 12, lg: 14 }}
               fontWeight={500}
             >
               Simply browse through our extensive list of trusted doctors,
@@ -50,7 +48,7 @@ const HeroSection = () => {
               schedule your appointment hassle-free.
             </Typography>
           </Grid>
-          <Grid container justifyContent={isMobile ? "center" : "left"}>
+          <Grid container justifyContent={{ xs: "center", sm: "left" }}>
             <Link href="#speciality">
               <Button
                 endIcon={
@@ -66,7 +64,7 @@ const HeroSection = () => {
                   color: "#595959",
                   borderRadius: 5,
                   padding: "8px 15px",
-                  marginTop: isMobile ? 2 : isTablet ? 3 : isDesktop ? 4 : 5,
+                  marginTop: { xs: 1.5, sm: 2, md: 3, lg: 4 },
                   transition: "all 0.3s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.05)",
@@ -84,12 +82,12 @@ const HeroSection = () => {
         container
         alignItems="flex-end"
         justifyContent="center"
-        paddingX={isMobile ? 2 : isTablet ? 3 : isDesktop ? 4 : 5}
+        paddingX={{ xs: 2, sm: 3, md: 4, lg: 5 }}
       >
         <Image
           src={assets.header_img}
           alt="header_img"
-          width={isMobile ? 300 : isTablet ? 400 : isDesktop ? 500 : 600}
+          width={500}
           style={{ height: "auto" }}
         />
       </Grid>

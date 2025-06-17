@@ -15,7 +15,12 @@ const Banner = () => {
       borderRadius={2}
     >
       <Grid size={{ xs: 12, md: 7 }} container direction="column" padding={6}>
-        <Typography fontSize={40} fontWeight={600} color="#fff" mt={5}>
+        <Typography
+          fontSize={{ xs: 28, sm: 32, md: 36, lg: 40 }}
+          fontWeight={600}
+          color="#fff"
+          mt={{ xs: 2, sm: 3, md: 4, lg: 5 }}
+        >
           Book Appointment <br /> With 100+ Trusted Doctors
         </Typography>
 
@@ -31,7 +36,6 @@ const Banner = () => {
                 transform: "scale(1.05)",
               },
             }}
-            onClick={() => scrollTo(0, 0)}
           >
             Create account
           </Button>
