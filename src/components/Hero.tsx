@@ -12,7 +12,7 @@ const HeroSection = () => {
       spacing={2}
       bgcolor="#5F6FF0"
       borderRadius={2}
-      mt={5}
+      mt={{ xs: 2, sm: 3, md: 4, lg: 5 }}
     >
       <Grid
         size={{ xs: 12, md: 6 }}
