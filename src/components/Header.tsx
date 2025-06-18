@@ -1,5 +1,4 @@
 "use client";
-
 import { assets } from "@/assets/assets";
 import { headerLinks } from "@/mockData";
 import {
@@ -13,15 +12,20 @@ import { useTheme } from "@mui/material/styles";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Profile from "./Profile";
 
 const Header = () => {
   const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
   const [token, setToken] = useState(true);
+  const [mounted, setMounted] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"), { noSsr: true });
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
 
   return (
     <>
@@ -29,7 +33,7 @@ const Header = () => {
         container
         alignItems="center"
         justifyContent="space-between"
-        padding={2}
+        paddingY={1}
         sx={{
           position: "sticky",
           top: 0,
@@ -84,7 +88,7 @@ const Header = () => {
                     backgroundColor: "#5F6FFF",
                     borderRadius: 5,
                     color: "#fff",
-                    padding: "10px 20px",
+                    padding: "8px 16px",
                   }}
                 >
                   Create account
@@ -127,8 +131,7 @@ const Header = () => {
               src={assets.logo}
               alt="Logo"
               width={40}
-              height={40}
-              style={{ objectFit: "contain" }}
+              style={{ height: "auto" }}
             />
             <Image
               src={assets.cross_icon}
@@ -144,7 +147,7 @@ const Header = () => {
               href={link.path}
               onClick={() => setShowMenu(false)}
             >
-              <Typography sx={{ py: 1.5, fontSize: 18, fontWeight: 500 }}>
+              <Typography paddingY={1} fontSize={18} fontWeight={500}>
                 {link.title}
               </Typography>
             </Link>
@@ -153,14 +156,14 @@ const Header = () => {
           {!token && (
             <Link href="/login">
               <Button
-                fullWidth
                 sx={{
-                  mt: 4,
+                  marginTop: 2,
                   backgroundColor: "#5F6FFF",
-                  borderRadius: 2,
+                  borderRadius: 5,
                   color: "#fff",
-                  padding: "10px",
+                  padding: "8px 16px",
                 }}
+                onClick={() => setShowMenu(false)}
               >
                 Create account
               </Button>
