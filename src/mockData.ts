@@ -44,3 +44,30 @@ export const aboutCardData = [
       "Tailored recommendations and reminders to help you stay on top of your health.",
   },
 ];
+
+
+
+export const adminLinks = [
+  { title: "Dashboard", path: "/" },
+  { title: "Appointments", path: "/appointments" },
+  { title: "Add Doctor", path: "/add-doctor" },
+  { title: "Doctors List", path: "/doctors-list" },
+];
+
+export const dashboardCardData = [
+  {
+    title: "14",
+    description:
+      "Doctors",
+  },
+  {
+    title: "2",
+    description:
+      "Appointments",
+  },
+  {
+    title: "5",
+    description:
+      "Patients",
+  },
+];
